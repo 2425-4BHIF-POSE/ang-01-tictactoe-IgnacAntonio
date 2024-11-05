@@ -1,0 +1,13 @@
+<div class="board">
+  <div *ngFor="let row of board; let rowIndex = index" class="row">
+    <div *ngFor="let cell of row; let colIndex = index" class="cell" (click)="handleCellClick(rowIndex, colIndex)">
+      {{ cell }}
+    </div>
+  </div>
+  <p>{{ message }}</p>
+  <div *ngIf="winner">
+    Player {{ winner }} has won!
+    <button (click)="resetGame()">Restart</button>
+  </div>
+
+</div>
